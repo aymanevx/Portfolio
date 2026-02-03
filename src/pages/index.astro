@@ -1,0 +1,327 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Accueil">
+  <section class="hero">
+    <h1>Aymane Aibichi</h1>
+    <p class="tagline">Data Scientist | ML Engineer</p>
+    <p class="description">
+      Spécialiste de la valorisation de données, 
+      je combine analyse prédictive et intelligence artificielle 
+      pour transformer les informations brutes en leviers décisionnels et 
+      automatiser les tâches complexes.
+    </p>
+    <div class="cta-buttons">
+      <a href="/contact" class="btn-primary">Me contacter</a>
+      <a href="/projets" class="btn-secondary">Voir mes projets</a>
+    </div>
+  </section>
+
+  <section class="services">
+  <h2>Mes Domaines d'Expertise</h2>
+  <div class="services-grid">
+    
+    <div class="service-card">
+      <h3>Analyse & Visualisation</h3>
+      <p>Exploration et nettoyage de données (EDA) pour créer des tableaux de bord interactifs et rendre la donnée intelligible.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Modélisation Prédictive</h3>
+      <p>Conception d'algorithmes de Machine Learning pour anticiper les tendances, classifier les données et optimiser la prise de décision.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Automatisation & IA</h3>
+      <p>Intégration d'IA pour automatiser les tâches répétitives et fluidifier les processus.</p>
+    </div>
+
+  </div>
+</section>
+
+  <section class="tech-stack">
+  <div class="section-header">
+    <h2>Stack Technique</h2>
+    <p class="subtitle">Les technologies que je maîtrise pour créer des solutions data performantes</p>
+  </div>
+  
+  <div class="skills-container">
+    
+    <div class="skill-category">
+      <div class="category-header">
+        <span class="icon">💻</span>
+        <h3>Data Science & ML</h3>
+      </div>
+      <p class="category-description">Analyse avancée, modélisation prédictive et intelligence artificielle</p>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">Polars</span>
+        <span class="tag">Scikit-learn</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">R</span>
+        <span class="tag">SAS</span>
+        <span class="tag">Numpy</span>
+        <span class="tag">Matplotlib</span>
+        <span class="tag">Seaborn</span>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <div class="category-header">
+        <span class="icon">📊</span>
+        <h3>BI & Données</h3>
+      </div>
+      <p class="category-description">Visualisation, reporting et gestion de bases de données</p>
+      <div class="tags">
+        <span class="tag">Power BI</span>
+        <span class="tag">Excel</span>
+        <span class="tag">VBA</span>
+        <span class="tag">Oracle (SQL)</span>
+        <span class="tag">SharePoint</span>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <div class="category-header">
+        <span class="icon">⚙️</span>
+        <h3>Automatisation</h3>
+      </div>
+      <p class="category-description">Optimisation des processus et automatisation des tâches</p>
+      <div class="tags">
+        <span class="tag">N8N</span>
+        <span class="tag">Power Automate</span>
+        <span class="tag">Lobster</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+</BaseLayout>
+
+<style>
+  .hero {
+    text-align: center;
+    padding: 4rem 0;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #667eea;
+  }
+
+  .tagline {
+    font-size: 1.3rem;
+    color: #764ba2;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    color: #555;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+  }
+
+  .btn-secondary {
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+  }
+
+  .btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .services {
+  margin-top: 4rem;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .service-card {
+    background: #f8f9ff;
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    transition: transform 0.2s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .service-card h3 {
+    color: #667eea;
+    margin-bottom: 0.5rem;
+  }
+
+  /* NOUVEAU CSS POUR STACK TECHNIQUE */
+  .tech-stack {
+    padding: 4rem 0;
+    background: linear-gradient(to bottom, transparent, rgba(102, 126, 234, 0.03));
+    margin-top: 4rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .skill-category {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(102, 126, 234, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .skill-category:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.2);
+  }
+
+  .skill-category:hover::before {
+    transform: scaleX(1);
+  }
+
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .icon {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  .skill-category h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin: 0;
+  }
+
+  .category-description {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #f8f9ff, #eff1ff);
+    color: #667eea;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    transition: all 0.2s ease;
+    cursor: default;
+  }
+
+  .tag:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .section-header h2 {
+      font-size: 2rem;
+    }
+
+    .skills-container {
+      grid-template-columns: 1fr;
+    }
+
+    .skill-category {
+      padding: 1.5rem;
+    }
+  }
+</style>
