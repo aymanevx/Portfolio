@@ -1,0 +1,204 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Liste de tes projets (facile à étendre !)
+const projets = [
+  {
+    id: "parkingdqn",
+    titre: "ParkingDQN",
+    categorie: "Reinforcement Learning",
+    description: "Système d'apprentissage par renforcement pour apprendre à une voiture autonome à se garer parfaitement.",
+    technologies: ["Python", "PyTorch", "DQN", "Pygame"],
+    image: "/images/parking-preview.gif", // Tu ajouteras l'image plus tard
+    lien: "/projets/parkingdqn"
+  },
+    {
+    id: "newsbot360",
+    titre: "NewsBot360",
+    categorie: "MCP Agent",
+    description: "Un assistant intelligent basé sur une architecture agentique (LLM + MCP) capable de rechercher, synthétiser et analyser le sentiment de l'actualité en temps réel. Orchestration complète entre NewsAPI, outils NLP et base de données.",
+    technologies: ["Python", "FastMCP", "LangChain", "Streamlit"],
+    image: "/images/newsbot360-preview.png", // Tu ajouteras l'image plus tard
+    lien: "/projets/newsbot360"
+  },
+  // Tu pourras ajouter d'autres projets ici facilement :
+  // {
+  //   id: "projet2",
+  //   titre: "Nom du projet 2",
+  //   categorie: "Data Science",
+  //   description: "Description courte...",
+  //   technologies: ["Python", "Pandas"],
+  //   image: "/images/projet2.jpg",
+  //   lien: "/projets/projet2"
+  // },
+];
+---
+
+<BaseLayout title="Mes Projets">
+  <section class="projects-hero">
+    <h1>Mes Projets</h1>
+    <p class="hero-description">
+      Une sélection de mes réalisations en Data Science, Machine Learning et Intelligence Artificielle
+    </p>
+  </section>
+
+  <section class="projects-grid">
+    {projets.map((projet) => (
+      <article class="project-card">
+        <div class="project-image">
+          <img src={projet.image} alt={projet.titre} />
+          <span class="project-category">{projet.categorie}</span>
+        </div>
+        
+        <div class="project-content">
+          <h2>{projet.titre}</h2>
+          <p class="project-description">{projet.description}</p>
+          
+          <div class="project-tech">
+            {projet.technologies.map((tech) => (
+              <span class="tech-badge">{tech}</span>
+            ))}
+          </div>
+          
+          <a href={projet.lien} class="project-link">
+            Voir le projet 
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </article>
+    ))}
+  </section>
+</BaseLayout>
+
+<style>
+  .projects-hero {
+    text-align: center;
+    padding: 3rem 0 2rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+  }
+
+  .project-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(102, 126, 234, 0.1);
+  }
+
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.2);
+  }
+
+  .project-image {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    overflow: hidden;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+  }
+
+  .project-category {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    color: #667eea;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .project-content {
+    padding: 2rem;
+  }
+
+  .project-card h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  .project-description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tech-badge {
+    background: linear-gradient(135deg, #f8f9ff, #eff1ff);
+    color: #667eea;
+    padding: 0.4rem 0.9rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #667eea;
+    font-weight: 600;
+    text-decoration: none;
+    transition: gap 0.3s ease;
+  }
+
+  .project-link:hover {
+    gap: 1rem;
+  }
+
+  .arrow {
+    transition: transform 0.3s ease;
+  }
+
+  .project-link:hover .arrow {
+    transform: translateX(5px);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

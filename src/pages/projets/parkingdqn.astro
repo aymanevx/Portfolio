@@ -1,0 +1,379 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="ParkingDQN - Apprentissage du stationnement">
+  <article class="project-detail">
+    
+    <!-- Header du projet -->
+    <header class="project-header">
+      <a href="/projets" class="back-link">← Retour aux projets</a>
+      <h1>ParkingDQN</h1>
+      <p class="tagline">Apprentissage par renforcement pour le stationnement autonome</p>
+      <div class="project-meta">
+        <span class="meta-item">Reinforcement Learning</span>
+        <span class="meta-item">2025</span>
+      </div>
+    </header>
+
+    <!-- Image principale -->
+    <div class="project-banner">
+      <img src="/images/parking-preview.gif" alt="ParkingDQN demonstration" />
+    </div>
+
+    <!-- Contexte -->
+    <section class="content-section">
+      <h2>Contexte du projet</h2>
+      <p>
+        Ce projet explore l'utilisation du <strong>Deep Q-Learning (DQN)</strong> pour apprendre 
+        à un agent autonome à se garer dans un espace de stationnement. L'objectif était de créer 
+        un système capable d'apprendre par essai-erreur, sans programmation explicite des règles de conduite.
+      </p>
+    </section>
+
+    <!-- Technologies utilisées -->
+    <section class="content-section">
+      <h2>Stack technique</h2>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <h3>Python</h3>
+          <p>Langage du projet</p>
+        </div>
+        <div class="tech-item">
+          <h3>PyTorch</h3>
+          <p>Framework de Deep Learning</p>
+        </div>
+        <div class="tech-item">
+          <h3>Pygame</h3>
+          <p>Environnement de simulation</p>
+        </div>
+        <div class="tech-item">
+          <h3>DQN Algorithm</h3>
+          <p>Algorithme d'apprentissage par renforcement</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Approche technique -->
+    <section class="content-section">
+      <h2>⚙️ Approche technique</h2>
+      
+      <h3>1. Environnement de simulation</h3>
+      <p>
+        Création d'un environnement 2D simulant un parking avec obstacles. 
+        L'agent (voiture) reçoit des observations sur sa position, son angle et la distance aux obstacles.
+      </p>
+
+      <h3>2. Architecture du réseau neuronal</h3>
+      <ul>
+        <li>Réseau de neurones à 3 couches cachées</li>
+        <li>Input : État de la voiture (position x, y, angle, vitesse)</li>
+        <li>Output : Q-values pour chaque action possible (avancer, reculer, tourner)</li>
+      </ul>
+
+      <h3>3. Fonction de récompense</h3>
+      <p>Système de récompenses pour guider l'apprentissage :</p>
+      <ul>
+        <li>✅ +100 points : stationnement réussi dans la zone cible</li>
+        <li>❌ -50 points : collision avec un obstacle</li>
+        <li>⏱️ -1 point par pas de temps : encourage l'efficacité</li>
+        <li>📏 Bonus proportionnel à la proximité de la cible</li>
+      </ul>
+    </section>
+
+    <!-- Résultats -->
+    <section class="content-section">
+      <h2>📊 Résultats</h2>
+      <div class="results-grid">
+        <div class="result-card">
+          <h3>100%</h3>
+          <p>Taux de réussite après 20 000 épisodes d'entraînement</p>
+        </div>
+        <div class="result-card">
+          <h3>4.2s</h3>
+          <p>Temps moyen de stationnement</p>
+        </div>
+        <div class="result-card">
+          <h3>15 époques</h3>
+          <p>Convergence de l'algorithme</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Défis et apprentissages -->
+    <section class="content-section">
+      <h2>🚀 Défis et apprentissages</h2>
+      <div class="challenge-box">
+        <h3>Principaux défis</h3>
+        <ul>
+          <li>Équilibrage exploration vs exploitation</li>
+          <li>Stabilisation de l'entraînement avec Experience Replay</li>
+          <li>Optimisation des hyperparamètres (learning rate, gamma, epsilon decay)</li>
+        </ul>
+      </div>
+      
+      <div class="learning-box">
+        <h3>Compétences acquises</h3>
+        <ul>
+          <li>Maîtrise du Deep Q-Learning et de ses variantes (Double DQN)</li>
+          <li>Conception d'environnements de simulation personnalisés</li>
+          <li>Debugging et visualisation de l'apprentissage</li>
+          <li>Optimisation des performances d'entraînement</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Code GitHub -->
+    <section class="content-section cta-section">
+      <h2>💻 Code source</h2>
+      <p>Le code complet du projet est disponible sur GitHub :</p>
+      <a href="https://github.com/aymanevx/Parking_DQN" class="github-btn" target="_blank">
+        <span class="github-icon">📦</span>
+        Voir sur GitHub
+      </a>
+      <div class="contributors">
+        <p class="contributors-label">Développé par</p>
+        <p class="contributors-names">Aymane Aibichi • Zineb Manar</p>
+      </div>
+    </section>
+
+  </article>
+</BaseLayout>
+
+<style>
+  .project-detail {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .project-header {
+    text-align: center;
+    padding: 2rem 0 3rem;
+  }
+
+  .back-link {
+    display: inline-block;
+    color: #667eea;
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    transition: transform 0.2s;
+  }
+
+  .back-link:hover {
+    transform: translateX(-5px);
+  }
+
+  h1 {
+    font-size: 3rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+  }
+
+  .tagline {
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-meta {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    background: #f8f9ff;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    color: #667eea;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .project-banner {
+    width: 100%;
+    height: 400px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+  }
+
+  .project-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .content-section {
+    margin-bottom: 3rem;
+  }
+
+  .content-section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #667eea;
+  }
+
+  .content-section h3 {
+    font-size: 1.3rem;
+    color: #667eea;
+    margin: 1.5rem 0 1rem;
+  }
+
+  .content-section p {
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1rem;
+  }
+
+  .content-section ul {
+    line-height: 1.8;
+    color: #555;
+    margin-left: 1.5rem;
+  }
+
+  .content-section li {
+    margin-bottom: 0.5rem;
+  }
+
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .tech-item {
+    background: #f8f9ff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+  }
+
+  .tech-item h3 {
+    color: #667eea;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+  }
+
+  .tech-item p {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .result-card {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+  }
+
+  .result-card h3 {
+    font-size: 2.5rem;
+    margin: 0 0 0.5rem 0;
+    color: white;
+  }
+
+  .result-card p {
+    margin: 0;
+    opacity: 0.95;
+    color: white;
+  }
+
+  .challenge-box, .learning-box {
+    background: #f8f9ff;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #667eea;
+  }
+
+  .challenge-box h3, .learning-box h3 {
+    color: #667eea;
+    margin-top: 0;
+  }
+
+  .cta-section {
+    text-align: center;
+    background: linear-gradient(135deg, #f8f9ff, #eff1ff);
+    padding: 3rem;
+    border-radius: 16px;
+  }
+
+  .github-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    margin-top: 1rem;
+  }
+
+  .github-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+  }
+
+  .github-icon {
+    font-size: 1.5rem;
+  }
+
+  .contributors {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 2px solid #bfdbfe;
+  }
+
+  .contributors-label {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  .contributors-names {
+    font-size: 1.1rem;
+    color: #1e293b;
+    font-weight: 600;
+    margin: 0;
+  }
+
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    .project-banner {
+      height: 250px;
+    }
+
+    .results-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
