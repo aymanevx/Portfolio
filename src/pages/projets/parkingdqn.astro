@@ -18,7 +18,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
     <!-- Image principale -->
     <div class="project-banner">
-      <img src={`${import.meta.env.BASE_URL}/images/parking-preview.gif`} alt="ParkingDQN demonstration" />
+      <img src={`${import.meta.env.BASE_URL}/images/parking-preview.png`} alt="ParkingDQN demonstration" />
     </div>
 
     <!-- Contexte -->
@@ -26,7 +26,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <h2>Contexte du projet</h2>
       <p>
         Ce projet explore l'utilisation du <strong>Deep Q-Learning (DQN)</strong> pour apprendre 
-        à un agent autonome à se garer dans un espace de stationnement. L'objectif était de créer 
+        à un agent autonome à se garer dans un espace de stationnement. L'objectif est de créer 
         un système capable d'apprendre par essai-erreur, sans programmation explicite des règles de conduite.
       </p>
     </section>
@@ -56,53 +56,44 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
     <!-- Approche technique -->
     <section class="content-section">
-      <h2>⚙️ Approche technique</h2>
+      <h2>Approche technique</h2>
       
       <h3>1. Environnement de simulation</h3>
       <p>
         Création d'un environnement 2D simulant un parking avec obstacles. 
-        L'agent (voiture) reçoit des observations sur sa position, son angle et la distance aux obstacles.
+        L'agent (voiture) reçoit des observations sur sa position, son angle la position des obstacles et de son objectif.
       </p>
 
       <h3>2. Architecture du réseau neuronal</h3>
       <ul>
-        <li>Réseau de neurones à 3 couches cachées</li>
-        <li>Input : État de la voiture (position x, y, angle, vitesse)</li>
-        <li>Output : Q-values pour chaque action possible (avancer, reculer, tourner)</li>
+        <li>Réseau de neurones à 2 couches cachées de 128 neurones</li>
+        <li>Input : État de la voiture (position x, y, angle, position des obstacles, position de l'objectif)</li>
+        <li>Output : Q-values pour chaque action possible (avancer, avancer vers la droite, avancer vers la gauche)</li>
       </ul>
 
       <h3>3. Fonction de récompense</h3>
       <p>Système de récompenses pour guider l'apprentissage :</p>
       <ul>
-        <li>✅ +100 points : stationnement réussi dans la zone cible</li>
-        <li>❌ -50 points : collision avec un obstacle</li>
-        <li>⏱️ -1 point par pas de temps : encourage l'efficacité</li>
-        <li>📏 Bonus proportionnel à la proximité de la cible</li>
+        <li>+100000 points : stationnement réussi dans la zone cible</li>
+        <li>-1 points : collision avec un obstacle</li>
+        <li>-0.001 point par pas de temps : encourage l'efficacité</li>
       </ul>
     </section>
 
     <!-- Résultats -->
     <section class="content-section">
-      <h2>📊 Résultats</h2>
+      <h2>Résultats</h2>
       <div class="results-grid">
         <div class="result-card">
           <h3>100%</h3>
-          <p>Taux de réussite après 20 000 épisodes d'entraînement</p>
-        </div>
-        <div class="result-card">
-          <h3>4.2s</h3>
-          <p>Temps moyen de stationnement</p>
-        </div>
-        <div class="result-card">
-          <h3>15 époques</h3>
-          <p>Convergence de l'algorithme</p>
+          <p>Taux de réussite après 30 000 épisodes d'entraînement</p>
         </div>
       </div>
     </section>
 
     <!-- Défis et apprentissages -->
     <section class="content-section">
-      <h2>🚀 Défis et apprentissages</h2>
+      <h2>Défis et apprentissages</h2>
       <div class="challenge-box">
         <h3>Principaux défis</h3>
         <ul>
@@ -115,8 +106,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <div class="learning-box">
         <h3>Compétences acquises</h3>
         <ul>
-          <li>Maîtrise du Deep Q-Learning et de ses variantes (Double DQN)</li>
-          <li>Conception d'environnements de simulation personnalisés</li>
+          <li>Maîtrise du Deep Q-Learning</li>
+          <li>Conception d'environnements de simulation personnalisés avec Pygame</li>
           <li>Debugging et visualisation de l'apprentissage</li>
           <li>Optimisation des performances d'entraînement</li>
         </ul>
@@ -125,10 +116,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
     <!-- Code GitHub -->
     <section class="content-section cta-section">
-      <h2>💻 Code source</h2>
+      <h2>Code source</h2>
       <p>Le code complet du projet est disponible sur GitHub :</p>
       <a href="https://github.com/aymanevx/Parking_DQN" class="github-btn" target="_blank">
-        <span class="github-icon">📦</span>
         Voir sur GitHub
       </a>
       <div class="contributors">

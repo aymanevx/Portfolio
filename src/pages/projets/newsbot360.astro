@@ -40,7 +40,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
     <!-- Architecture -->
     <section class="content-section">
-      <h2>🏗️ Architecture du système</h2>
+      <h2>Architecture du système</h2>
       <div class="architecture-box">
         <pre class="architecture-diagram">
 Utilisateur
@@ -54,13 +54,13 @@ Agent LLM (Groq / Ollama)
    ▼
 Serveur MCP (FastMCP)
    │
-   ├── 🔍 Recherche News (NewsAPI)
-   ├── 💾 Base de données interne
-   ├── 📊 Analyse de sentiment
-   ├── 📰 Synthèse quotidienne
-   ├── 📈 Visualisations
-   ├── ✍️ Résumé d'articles
-   └── 📄 Extraction PDF
+   ├── Recherche de News via NewsAPI
+   ├── Recherche de News via la base de données supabase
+   ├── Analyse de sentiment
+   ├── Synthèse quotidienne
+   ├── Visualisations
+   ├── Résumé d'articles
+   └── Extraction PDF
         </pre>
       </div>
       <p>
@@ -78,7 +78,7 @@ Serveur MCP (FastMCP)
           <p>Serveur MCP pour exposer les outils à l'agent</p>
         </div>
         <div class="tech-item">
-          <h3>Groq / Ollama</h3>
+          <h3>Groq</h3>
           <p>Modèles LLM pour l'orchestration agentique</p>
         </div>
         <div class="tech-item">
@@ -115,10 +115,10 @@ Serveur MCP (FastMCP)
 
     <!-- Fonctionnalités -->
     <section class="content-section">
-      <h2>⚙️ Fonctionnalités principales</h2>
+      <h2>Fonctionnalités principales</h2>
       
       <div class="feature-card">
-        <h3>🔍 1. Recherche d'actualité intelligente</h3>
+        <h3>1. Recherche d'actualité intelligente</h3>
         <p>
           L'agent détecte automatiquement les intentions de recherche et interroge l'API NewsAPI 
           pour récupérer les 20 articles les plus récents sur un sujet donné. Le LLM synthétise 
@@ -130,16 +130,15 @@ Serveur MCP (FastMCP)
       </div>
 
       <div class="feature-card">
-        <h3>💾 2. Base de données d'articles interne</h3>
+        <h3>2. Recherche d'actualité dans la base de données supabase</h3>
         <p>
-          Historique d'articles enrichi quotidiennement depuis le <strong>24 décembre 2025</strong> 
-          via GitHub Actions. Permet des requêtes par mot-clé ou intervalle de dates, indépendamment 
-          des limitations des APIs externes.
+          L’agent analyse les intentions de l’utilisateur pour interroger un historique d'articles, alimenté quotidiennement via GitHub Actions depuis le 24 décembre 2025.
+          En permettant des recherches ciblées par mots-clés durant une période donnée, il garantit un accès direct et exhaustif aux données, sans les contraintes de rétention ou les limitations de quota des API externes.
         </p>
       </div>
 
       <div class="feature-card">
-        <h3>🏷️ 3. Classification et visualisation</h3>
+        <h3>Classification et visualisation</h3>
         <p>Catégorisation automatique des articles en 10 labels thématiques :</p>
         <ul>
           <li>Politique</li>
@@ -153,11 +152,11 @@ Serveur MCP (FastMCP)
           <li>Culture & Loisirs</li>
           <li>Autres / Indéterminé</li>
         </ul>
-        <p>Génération de graphiques pour visualiser la distribution des thématiques dans le temps.</p>
+        <p>Génération de graphiques pour visualiser la distribution des thématiques</p>
       </div>
 
       <div class="feature-card">
-        <h3>😊 4. Analyse de sentiment</h3>
+        <h3>4. Analyse de sentiment</h3>
         <p>
           Utilisation de modèles Transformers pour évaluer le ton des articles (positif/négatif/neutre). 
           Bien que les articles journalistiques soient généralement neutres, l'indicateur sert de 
@@ -166,7 +165,7 @@ Serveur MCP (FastMCP)
       </div>
 
       <div class="feature-card">
-        <h3>✍️ 5. Résumé automatique d'articles</h3>
+        <h3>5. Résumé automatique d'articles</h3>
         <p>Pipeline complet :</p>
         <ol>
           <li>Scraping de l'article depuis l'URL</li>
@@ -177,15 +176,15 @@ Serveur MCP (FastMCP)
       </div>
 
       <div class="feature-card">
-        <h3>📰 6. Synthèse quotidienne</h3>
+        <h3>6. Synthèse quotidienne</h3>
         <p>
-          Génération d'un résumé complet des actualités du jour en appelant l'API OpenAI, 
+          Génération d'un résumé complet des actualités du jour (à partir d'articles complet contenu dans la base de données) en appelant l'API OpenAI, 
           permettant une vue d'ensemble rapide et structurée des événements majeurs.
         </p>
       </div>
 
       <div class="feature-card">
-        <h3>📄 7. Extraction PDF → Texte</h3>
+        <h3>7. Extraction PDF → Texte</h3>
         <p>
           Outil utilitaire pour extraire le contenu textuel de documents PDF page par page, 
           réutilisable pour l'analyse, le résumé ou la classification de rapports.
@@ -195,7 +194,7 @@ Serveur MCP (FastMCP)
 
     <!-- Le protocole MCP -->
     <section class="content-section">
-      <h2>🔗 Le Model Context Protocol (MCP)</h2>
+      <h2>Le Model Context Protocol (MCP)</h2>
       <div class="mcp-explanation">
         <p>
           Le MCP est au cœur de l'architecture de NewsBot360. Il permet une <strong>séparation 
@@ -214,39 +213,13 @@ Serveur MCP (FastMCP)
       </div>
     </section>
 
-    <!-- Résultats et métriques -->
-    <section class="content-section">
-      <h2>📊 Performances et métriques</h2>
-      <div class="results-grid">
-        <div class="result-card">
-          <h3>20</h3>
-          <p>Articles analysés par requête</p>
-        </div>
-        <div class="result-card">
-          <h3>10</h3>
-          <p>Catégories de classification</p>
-        </div>
-        <div class="result-card">
-          <h3>24 déc.</h3>
-          <p>Début de l'ingestion continue</p>
-        </div>
-        <div class="result-card">
-          <h3>100%</h3>
-          <p>Automatisation via GitHub Actions</p>
-        </div>
-      </div>
-    </section>
-
     <!-- Défis et apprentissages -->
     <section class="content-section">
-      <h2>🚀 Défis et apprentissages</h2>
+      <h2>Défis et apprentissages</h2>
       <div class="challenge-box">
         <h3>Principaux défis</h3>
         <ul>
-          <li>Orchestration intelligente des outils par le LLM sans sur-engineering</li>
-          <li>Gestion de la neutralité journalistique dans l'analyse de sentiment</li>
           <li>Optimisation du pipeline de scraping et résumé d'articles</li>
-          <li>Conception d'un système de récompenses pour l'ingestion quotidienne fiable</li>
           <li>Équilibre entre automatisation et contrôle humain</li>
         </ul>
       </div>
@@ -266,25 +239,21 @@ Serveur MCP (FastMCP)
 
     <!-- Perspectives -->
     <section class="content-section">
-      <h2>🔮 Perspectives d'amélioration</h2>
+      <h2>Perspectives d'amélioration</h2>
       <div class="future-box">
         <ul>
-          <li>🌍 Support multilingue avec traduction automatique</li>
-          <li>🎯 Personnalisation des préférences thématiques par utilisateur</li>
-          <li>🔔 Système d'alertes pour suivre des sujets spécifiques</li>
-          <li>📊 Dashboard analytique avec tendances et statistiques avancées</li>
-          <li>🤖 Fine-tuning de modèles sur corpus journalistique français</li>
-          <li>🔗 Intégration de sources d'actualités supplémentaires (RSS, Twitter, etc.)</li>
+          <li>Support multilingue avec traduction automatique</li>
+          <li>Système d'alertes pour suivre des sujets spécifiques</li>
+          <li>Dashboard analytique avec tendances et statistiques avancées</li>
         </ul>
       </div>
     </section>
 
     <!-- Code GitHub -->
     <section class="content-section cta-section">
-      <h2>💻 Code source</h2>
+      <h2>Code source</h2>
       <p>Le code complet du projet est disponible sur GitHub :</p>
       <a href="https://github.com/aymanevx/NewsBot360" class="github-btn" target="_blank">
-        <span class="github-icon">📦</span>
         Voir sur GitHub
       </a>
       <div class="contributors">
