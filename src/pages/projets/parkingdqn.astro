@@ -7,7 +7,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     
     <!-- Header du projet -->
     <header class="project-header">
-      <a href="/projets" class="back-link">← Retour aux projets</a>
+      <a href={`${import.meta.env.BASE_URL}/projets`} class="back-link">← Retour aux projets</a>
       <h1>ParkingDQN</h1>
       <p class="tagline">Apprentissage par renforcement pour le stationnement autonome</p>
       <div class="project-meta">
@@ -18,7 +18,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
     <!-- Image principale -->
     <div class="project-banner">
-      <img src="/images/parking-preview.gif" alt="ParkingDQN demonstration" />
+      <img src={`${import.meta.env.BASE_URL}/images/parking-preview.gif`} alt="ParkingDQN demonstration" />
     </div>
 
     <!-- Contexte -->

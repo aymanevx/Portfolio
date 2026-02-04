@@ -7,7 +7,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     
     <!-- Header du projet -->
     <header class="project-header">
-      <a href="/projets" class="back-link">← Retour aux projets</a>
+      <a href={`${import.meta.env.BASE_URL}/projets`} class="back-link">← Retour aux projets</a>
       <h1>NewsBot360</h1>
       <p class="tagline">Agent IA intelligent pour l'analyse et la synthèse de l'actualité</p>
       <div class="project-meta">
@@ -19,7 +19,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
     <!-- Image principale -->
     <div class="project-banner">
-      <img src="/images/newsbot360-preview.png" alt="NewsBot360 demonstration" />
+      <img src={`${import.meta.env.BASE_URL}/images/newsbot360-preview.png`} alt="NewsBot360 demonstration" />
     </div>
 
     <!-- Contexte -->
