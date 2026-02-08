@@ -1,0 +1,465 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Base de Données 24h du Mans - Projet SQL">
+  <article class="project-detail">
+    
+    <!-- Header du projet -->
+    <header class="project-header">
+      <a href={`${import.meta.env.BASE_URL}/projets`} class="back-link">← Retour aux projets</a>
+      <h1>24 Heures du Mans 2024</h1>
+      <p class="tagline">Modélisation et analyse d'une course automobile avec SQL</p>
+      <div class="project-meta">
+        <span class="meta-item">Base de Données</span>
+        <span class="meta-item">2024</span>
+      </div>
+    </header>
+
+    <!-- Image principale -->
+    <div class="project-banner">
+      <img src={`${import.meta.env.BASE_URL}/images/lemans-preview.png`} alt="Base de données 24 Heures du Mans" />
+    </div>
+
+    <!-- Contexte -->
+    <section class="content-section">
+      <h2>Contexte du projet</h2>
+      <p>
+        Ce projet modélise les résultats de la course automobile des <strong>24 Heures du Mans 2024</strong> 
+        à travers une base de données relationnelle. L'objectif est de permettre une analyse simple et 
+        efficace des performances des voitures hypercars, des écuries et des pilotes, en structurant 
+        les données de manière normalisée et optimisée pour les requêtes analytiques.
+      </p>
+    </section>
+
+    <!-- Technologies utilisées -->
+    <section class="content-section">
+      <h2>Stack technique</h2>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <h3>SQL</h3>
+          <p>Langage de requêtes</p>
+        </div>
+        <div class="tech-item">
+          <h3>SQLite/PostgreSQL</h3>
+          <p>Système de gestion de base de données</p>
+        </div>
+        <div class="tech-item">
+          <h3>Mermaid</h3>
+          <p>Diagrammes ERD</p>
+        </div>
+        <div class="tech-item">
+          <h3>Conception Relationnelle</h3>
+          <p>Modélisation et normalisation</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Approche technique -->
+    <section class="content-section">
+      <h2>Approche technique</h2>
+      
+      <h3>1. Modèle conceptuel</h3>
+      <p>
+        Conception d'un schéma relationnel normalisé avec quatre entités principales : 
+        <strong>PILOTES</strong>, <strong>VOITURES</strong>, <strong>INSCRIPTIONS</strong> 
+        et <strong>RESULTAT_VOITURE</strong>. Le modèle évite la redondance tout en 
+        permettant des requêtes analytiques performantes.
+      </p>
+
+      <h3>2. Entités principales</h3>
+      <ul>
+        <li><strong>PILOTES</strong> : Identité et nationalité des pilotes participants</li>
+        <li><strong>VOITURES</strong> : Numéro, écurie, modèle et type (LMH, LMDh)</li>
+        <li><strong>INSCRIPTIONS</strong> : Table de liaison N-N entre pilotes et voitures</li>
+        <li><strong>RESULTAT_VOITURE</strong> : Position finale, tours parcourus, abandons et arrêts aux stands</li>
+      </ul>
+
+      <h3>3. Choix de conception</h3>
+      <ul>
+        <li>Normalisation pour éviter la redondance des données</li>
+        <li>Relation many-to-many entre pilotes et voitures via table d'inscriptions</li>
+        <li>Intégrité référentielle assurée par des clés étrangères (FOREIGN KEY)</li>
+        <li>Architecture extensible à plusieurs éditions ou compétitions</li>
+        <li>Optimisation pour les requêtes analytiques courantes</li>
+      </ul>
+
+      <h3>4. Requêtes analytiques clés</h3>
+      <p>Le projet inclut 10 requêtes SQL permettant d'analyser :</p>
+      <ul>
+        <li>Le classement final et les performances des voitures</li>
+        <li>Les statistiques par type de voiture (LMH vs LMDh)</li>
+        <li>Le nombre moyen d'arrêts aux stands par catégorie</li>
+        <li>L'association pilotes-écuries-résultats</li>
+        <li>Les abandons et voitures non classées</li>
+      </ul>
+    </section>
+
+    <!-- Résultats -->
+    <section class="content-section">
+      <h2>Résultats</h2>
+      <div class="results-grid">
+        <div class="result-card">
+          <h3>4 tables</h3>
+          <p>Modèle relationnel normalisé et optimisé</p>
+        </div>
+        <div class="result-card">
+          <h3>10 requêtes</h3>
+          <p>Analyses statistiques avancées</p>
+        </div>
+      </div>
+      
+      <!-- Exemple de requête -->
+      <div class="demo-container">
+        <h3>Exemple de requête analytique</h3>
+        <div class="code-wrapper">
+          <pre><code>-- Top 5 des voitures avec le plus d'arrêts aux stands
+SELECT numero_voiture, nombre_arrets
+FROM resultat_voiture
+ORDER BY nombre_arrets DESC
+LIMIT 5;</code></pre>
+        </div>
+        <p class="demo-caption">
+          Cette requête identifie les voitures ayant nécessité le plus d'arrèts au stands pendant la course.
+        </p>
+      </div>
+    </section>
+
+    <!-- Défis et apprentissages -->
+    <section class="content-section">
+      <h2>Défis et apprentissages</h2>
+      <div class="challenge-box">
+        <h3>Principaux défis</h3>
+        <ul>
+          <li>Normalisation des données pour éviter la redondance</li>
+          <li>Gestion des relations many-to-many (pilotes-voitures)</li>
+          <li>Traitement des données temporelles (temps d'abandon en chaîne de caractères)</li>
+          <li>Optimisation des jointures pour les requêtes analytiques</li>
+        </ul>
+      </div>
+      
+      <div class="learning-box">
+        <h3>Compétences acquises</h3>
+        <ul>
+          <li>Conception de schémas relationnels normalisés</li>
+          <li>Maîtrise des jointures SQL complexes</li>
+          <li>Utilisation de fonctions d'agrégation (AVG, COUNT, GROUP BY)</li>
+          <li>Modélisation de diagrammes ERD avec Mermaid</li>
+          <li>Optimisation de requêtes pour l'analyse de données</li>
+        </ul>
+      </div>
+
+      <div class="learning-box">
+        <h3>Perspectives d'amélioration</h3>
+        <ul>
+          <li>Extension à plusieurs éditions des 24h du Mans</li>
+          <li>Intégration de données de télémétrie (vitesses, temps au tour)</li>
+          <li>Modélisation des événements de course (accidents, safety cars)</li>
+          <li>Ajout d'informations sur les circuits et conditions météo</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Code GitHub -->
+    <section class="content-section cta-section">
+      <h2>Code source</h2>
+      <p>Le code complet du projet est disponible sur GitHub :</p>
+      <a href="https://github.com/aymanevx/24hduMans" class="github-btn" target="_blank">
+        Voir sur GitHub
+      </a>
+      <div class="contributors">
+        <p class="contributors-label">Développé par</p>
+        <p class="contributors-names">Aymane Aibichi</p>
+      </div>
+    </section>
+
+  </article>
+</BaseLayout>
+
+<style>
+  .project-detail {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .project-header {
+    text-align: center;
+    padding: 2rem 0 3rem;
+  }
+
+  .back-link {
+    display: inline-block;
+    color: #667eea;
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    transition: transform 0.2s;
+  }
+
+  .back-link:hover {
+    transform: translateX(-5px);
+  }
+
+  h1 {
+    font-size: 3rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+  }
+
+  .tagline {
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-meta {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    background: #f8f9ff;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    color: #667eea;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .project-banner {
+    width: 100%;
+    height: 400px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+  }
+
+  .project-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .content-section {
+    margin-bottom: 3rem;
+  }
+
+  .content-section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #667eea;
+  }
+
+  .content-section h3 {
+    font-size: 1.3rem;
+    color: #667eea;
+    margin: 1.5rem 0 1rem;
+  }
+
+  .content-section p {
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1rem;
+  }
+
+  .content-section ul {
+    line-height: 1.8;
+    color: #555;
+    margin-left: 1.5rem;
+  }
+
+  .content-section li {
+    margin-bottom: 0.5rem;
+  }
+
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .tech-item {
+    background: #f8f9ff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+  }
+
+  .tech-item h3 {
+    color: #667eea;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+  }
+
+  .tech-item p {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .result-card {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+  }
+
+  .result-card h3 {
+    font-size: 2.5rem;
+    margin: 0 0 0.5rem 0;
+    color: white;
+  }
+
+  .result-card p {
+    margin: 0;
+    opacity: 0.95;
+    color: white;
+  }
+
+  .challenge-box, .learning-box {
+    background: #f8f9ff;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #667eea;
+  }
+
+  .challenge-box h3, .learning-box h3 {
+    color: #667eea;
+    margin-top: 0;
+  }
+
+  .cta-section {
+    text-align: center;
+    background: linear-gradient(135deg, #f8f9ff, #eff1ff);
+    padding: 3rem;
+    border-radius: 16px;
+  }
+
+  .github-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    margin-top: 1rem;
+  }
+
+  .github-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+  }
+
+  .github-icon {
+    font-size: 1.5rem;
+  }
+
+  .contributors {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 2px solid #bfdbfe;
+  }
+
+  .contributors-label {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  .contributors-names {
+    font-size: 1.1rem;
+    color: #1e293b;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .demo-container {
+    margin-top: 3rem;
+    background: #f8f9ff;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 2px solid #e0e7ff;
+  }
+
+  .demo-container h3 {
+    text-align: center;
+    color: #667eea;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .code-wrapper {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: #1e1e1e;
+  }
+
+  .code-wrapper pre {
+    margin: 0;
+    padding: 1.5rem;
+    overflow-x: auto;
+  }
+
+  .code-wrapper code {
+    color: #d4d4d4;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .demo-caption {
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    font-style: italic;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    .project-banner {
+      height: 250px;
+    }
+
+    .results-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .code-wrapper code {
+      font-size: 0.8rem;
+    }
+  }
+</style>

@@ -91,6 +91,18 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       </div>
     </section>
 
+    <!-- Démonstration GIF -->
+    <div class="demo-container">
+        <h3>Démonstration</h3>
+        <div class="gif-wrapper">
+          <img src={`${import.meta.env.BASE_URL}/images/parking-preview.gif`} alt="Démonstration de navigation multi-agents" />
+        </div>
+        <p class="demo-caption">
+          Visualisation de plusieurs épisodes.
+        </p>
+      </div>
+    </section>
+
     <!-- Défis et apprentissages -->
     <section class="content-section">
       <h2>Défis et apprentissages</h2>
@@ -349,6 +361,46 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     color: #1e293b;
     font-weight: 600;
     margin: 0;
+  }
+
+    .demo-container {
+    margin-top: 3rem;
+    background: #f8f9ff;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 2px solid #e0e7ff;
+  }
+
+  .demo-container h3 {
+    text-align: center;
+    color: #667eea;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .gif-wrapper {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: white;
+  }
+
+  .gif-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .demo-caption {
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    font-style: italic;
   }
 
 
