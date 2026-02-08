@@ -278,7 +278,7 @@ Serveur MCP (FastMCP)
 
   .back-link {
     display: inline-block;
-    color: #667eea;
+    color: #00bfff;
     text-decoration: none;
     margin-bottom: 1.5rem;
     font-weight: 500;
@@ -287,19 +287,21 @@ Serveur MCP (FastMCP)
 
   .back-link:hover {
     transform: translateX(-5px);
+    color: #00d4ff;
   }
+
   h1 {
     font-size: 3rem;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #00bfff, #00d4ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 1rem;
-    }
+  }
 
   .tagline {
     font-size: 1.3rem;
-    color: #666;
+    color: #b0c4de;
     margin-bottom: 1.5rem;
   }
 
@@ -311,12 +313,13 @@ Serveur MCP (FastMCP)
   }
 
   .meta-item {
-    background: #f8f9ff;
+    background: rgba(0, 191, 255, 0.1);
     padding: 0.5rem 1.2rem;
     border-radius: 20px;
-    color: #667eea;
+    color: #00bfff;
     font-size: 0.95rem;
     font-weight: 500;
+    border: 1px solid rgba(0, 191, 255, 0.3);
   }
 
   .project-banner {
@@ -325,7 +328,7 @@ Serveur MCP (FastMCP)
     border-radius: 16px;
     overflow: hidden;
     margin-bottom: 3rem;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #0d1b2a, #1a3a52);
   }
 
   .project-banner img {
@@ -340,27 +343,27 @@ Serveur MCP (FastMCP)
 
   .content-section h2 {
     font-size: 2rem;
-    color: #333;
+    color: #e8e8e8;
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 3px solid #667eea;
+    border-bottom: 3px solid #00bfff;
   }
 
   .content-section h3 {
     font-size: 1.3rem;
-    color: #667eea;
+    color: #00bfff;
     margin: 1.5rem 0 1rem;
   }
 
   .content-section p {
     line-height: 1.8;
-    color: #555;
+    color: #b0c4de;
     margin-bottom: 1rem;
   }
 
   .content-section ul, .content-section ol {
     line-height: 1.8;
-    color: #555;
+    color: #b0c4de;
     margin-left: 1.5rem;
   }
 
@@ -369,15 +372,16 @@ Serveur MCP (FastMCP)
   }
 
   .architecture-box {
-    background: linear-gradient(135deg, #0f172a, #1e293b);
+    background: #243447;
     padding: 2.5rem;
     border-radius: 16px;
     margin: 2rem 0;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 191, 255, 0.2);
   }
 
   .architecture-diagram {
-    color: #e2e8f0;
+    color: #b0c4de;
     font-family: 'JetBrains Mono', 'Fira Code', monospace;
     font-size: 0.95rem;
     line-height: 1.8;
@@ -393,68 +397,81 @@ Serveur MCP (FastMCP)
   }
 
   .tech-item {
-    background: #f8f9ff;
+    background: #243447;
     padding: 1.5rem;
     border-radius: 12px;
-    border-left: 4px solid #667eea;
+    border-left: 4px solid #00bfff;
   }
 
   .tech-item h3 {
-    color: #667eea;
+    color: #00bfff;
     margin: 0 0 0.5rem 0;
     font-size: 1.1rem;
   }
 
   .tech-item p {
-    color: #666;
+    color: #b0c4de;
     font-size: 0.95rem;
     margin: 0;
   }
 
   .feature-card {
-    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    background: #243447;
     padding: 2rem;
     border-radius: 16px;
     margin-bottom: 1.8rem;
-    border: 2px solid #e2e8f0;
+    border: 2px solid rgba(0, 191, 255, 0.2);
     transition: all 0.3s ease;
   }
 
   .feature-card:hover {
-    border-color: #3b82f6;
-    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.1);
+    border-color: #00bfff;
+    box-shadow: 0 8px 25px rgba(0, 191, 255, 0.2);
   }
 
   .feature-card h3 {
     margin-top: 0;
     font-size: 1.5rem;
+    color: #e8e8e8;
+  }
+
+  .feature-card p {
+    color: #b0c4de;
   }
 
   .example-query {
-    background: #f0f9ff;
+    background: rgba(0, 191, 255, 0.1);
     padding: 1rem 1.3rem;
     border-radius: 10px;
     margin-top: 1rem;
-    border-left: 4px solid #3b82f6;
+    border-left: 4px solid #00bfff;
     font-size: 0.95rem;
-    color: #0c4a6e;
+    color: #00bfff;
   }
 
   .mcp-explanation {
-    background: linear-gradient(135deg, #fefce8, #fef9c3);
+    background: rgba(100, 200, 100, 0.1);
     padding: 2.5rem;
     border-radius: 16px;
-    border: 2px solid #fde047;
+    border: 2px solid rgba(100, 200, 100, 0.3);
+  }
+
+  .mcp-explanation h3 {
+    color: #00d4ff;
+  }
+
+  .mcp-explanation p {
+    color: #b0c4de;
   }
 
   .principle-box {
-    background: #fef3c7;
+    background: rgba(100, 200, 100, 0.15);
     padding: 1.2rem 1.5rem;
     border-radius: 10px;
     margin-top: 1.5rem;
-    border-left: 5px solid #f59e0b;
+    border-left: 5px solid #00d4ff;
     font-weight: 600;
-    color: #78350f;
+    color: #b0c4de;
   }
 
   .results-grid {
@@ -465,8 +482,8 @@ Serveur MCP (FastMCP)
   }
 
   .result-card {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
+    background: linear-gradient(135deg, #00bfff, #00d4ff);
+    color: #0d1b2a;
     padding: 2rem;
     border-radius: 16px;
     text-align: center;
@@ -475,30 +492,34 @@ Serveur MCP (FastMCP)
   .result-card h3 {
     font-size: 2.5rem;
     margin: 0 0 0.5rem 0;
-    color: white;
+    color: #0d1b2a;
   }
 
   .result-card p {
     margin: 0;
     opacity: 0.95;
-    color: white;
+    color: #0d1b2a;
   }
 
   .challenge-box, .learning-box, .future-box {
-    background: #f8f9ff;
+    background: #243447;
     padding: 2rem;
     border-radius: 12px;
     margin-bottom: 1.5rem;
-    border-left: 4px solid #667eea;
+    border-left: 4px solid #00bfff;
   }
 
   .challenge-box h3, .learning-box h3 {
-    color: #667eea;
+    color: #00bfff;
     margin-top: 0;
   }
 
+  .challenge-box p, .learning-box p, .future-box p {
+    color: #b0c4de;
+  }
+
   .future-box {
-    border-left-color: #8b5cf6;
+    border-left-color: #00d4ff;
   }
 
   .future-box ul {
@@ -511,21 +532,23 @@ Serveur MCP (FastMCP)
     padding-left: 0;
     margin-bottom: 1rem;
     font-size: 1.05rem;
+    color: #b0c4de;
   }
 
   .cta-section {
     text-align: center;
-    background: linear-gradient(135deg, #f8f9ff, #eff1ff);
+    background: rgba(0, 191, 255, 0.05);
     padding: 3rem;
     border-radius: 16px;
+    border: 2px solid rgba(0, 191, 255, 0.2);
   }
 
   .github-btn {
     display: inline-flex;
     align-items: center;
     gap: 0.8rem;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
+    background: linear-gradient(135deg, #00bfff, #00d4ff);
+    color: #0d1b2a;
     padding: 1rem 2.5rem;
     border-radius: 30px;
     text-decoration: none;
@@ -537,7 +560,7 @@ Serveur MCP (FastMCP)
 
   .github-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 10px 25px rgba(0, 191, 255, 0.4);
   }
 
   .github-icon {
@@ -547,19 +570,19 @@ Serveur MCP (FastMCP)
   .contributors {
     margin-top: 2.5rem;
     padding-top: 2rem;
-    border-top: 2px solid #bfdbfe;
+    border-top: 2px solid rgba(0, 191, 255, 0.3);
   }
 
   .contributors-label {
     font-size: 0.9rem;
-    color: #64748b;
+    color: #b0c4de;
     margin-bottom: 0.5rem;
     font-weight: 500;
   }
 
   .contributors-names {
     font-size: 1.1rem;
-    color: #1e293b;
+    color: #e8e8e8;
     font-weight: 600;
     margin: 0;
   }

@@ -42,19 +42,20 @@ const { title } = Astro.props;
   body {
     font-family: 'Segoe UI', system-ui, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #e8e8e8;
+    background: linear-gradient(135deg, #0d1b2a 0%, #1a3a52 100%);
     min-height: 100vh;
   }
 
   header {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(13, 27, 42, 0.95);
     backdrop-filter: blur(10px);
     padding: 1rem 2rem;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
     position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 2px solid #00bfff;
   }
 
   nav {
@@ -68,8 +69,13 @@ const { title } = Astro.props;
   .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #667eea;
+    color: #00bfff;
     text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .logo:hover {
+    color: #00d4ff;
   }
 
   .nav-links {
@@ -78,32 +84,34 @@ const { title } = Astro.props;
   }
 
   .nav-links a {
-    color: #667eea;
+    color: #b0c4de;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
   }
 
   .nav-links a:hover {
-    color: #764ba2;
+    color: #00bfff;
   }
 
   main {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 2rem;
-    background: white;
+    background: #1a2332;
     border-radius: 16px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    border-left: 4px solid #00bfff;
   }
 
   footer {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(13, 27, 42, 0.95);
     backdrop-filter: blur(10px);
     padding: 2rem;
     text-align: center;
-    color: #333;
+    color: #b0c4de;
     margin-top: 4rem;
+    border-top: 2px solid #00bfff;
   }
 
   /* Responsive pour mobile */

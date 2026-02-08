@@ -106,12 +106,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #667eea;
+    color: #00bfff;
   }
 
   .tagline {
     font-size: 1.3rem;
-    color: #764ba2;
+    color: #00d4ff;
     font-weight: 500;
     margin-bottom: 1.5rem;
   }
@@ -120,7 +120,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     font-size: 1.1rem;
     max-width: 600px;
     margin: 0 auto 2rem;
-    color: #555;
+    color: #b0c4de;
   }
 
   .cta-buttons {
@@ -139,19 +139,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   }
 
   .btn-primary {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
+    background: linear-gradient(135deg, #00bfff, #00d4ff);
+    color: #0d1b2a;
   }
 
   .btn-secondary {
-    background: white;
-    color: #667eea;
-    border: 2px solid #667eea;
+    background: transparent;
+    color: #00bfff;
+    border: 2px solid #00bfff;
   }
 
   .btn-primary:hover, .btn-secondary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 191, 255, 0.3);
   }
 
   .services {
@@ -162,7 +162,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     text-align: center;
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: #333;
+    color: #e8e8e8;
   }
 
   .services-grid {
@@ -173,26 +173,31 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   }
 
   .service-card {
-    background: #f8f9ff;
+    background: #243447;
     padding: 2rem;
     border-radius: 12px;
-    border-left: 4px solid #667eea;
+    border-left: 4px solid #00bfff;
     transition: transform 0.2s;
   }
 
   .service-card:hover {
     transform: translateY(-5px);
+    background: #2a3e52;
   }
 
   .service-card h3 {
-    color: #667eea;
+    color: #00bfff;
     margin-bottom: 0.5rem;
+  }
+
+  .service-card p {
+    color: #b0c4de;
   }
 
   /* NOUVEAU CSS POUR STACK TECHNIQUE */
   .tech-stack {
     padding: 4rem 0;
-    background: linear-gradient(to bottom, transparent, rgba(102, 126, 234, 0.03));
+    background: linear-gradient(to bottom, transparent, rgba(0, 191, 255, 0.05));
     margin-top: 4rem;
   }
 
@@ -203,7 +208,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   .section-header h2 {
     font-size: 2.5rem;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #00bfff, #00d4ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -212,7 +217,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   .subtitle {
     font-size: 1.1rem;
-    color: #666;
+    color: #b0c4de;
     max-width: 600px;
     margin: 0 auto;
   }
@@ -225,11 +230,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   }
 
   .skill-category {
-    background: white;
+    background: #243447;
     padding: 2rem;
     border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(102, 126, 234, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 191, 255, 0.2);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -242,14 +247,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
+    background: linear-gradient(90deg, #00bfff, #00d4ff);
     transform: scaleX(0);
     transition: transform 0.3s ease;
   }
 
   .skill-category:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.2);
+    box-shadow: 0 12px 35px rgba(0, 191, 255, 0.15);
+    background: #2a3e52;
   }
 
   .skill-category:hover::before {
@@ -270,12 +276,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   .skill-category h3 {
     font-size: 1.4rem;
-    color: #333;
+    color: #e8e8e8;
     margin: 0;
   }
 
   .category-description {
-    color: #666;
+    color: #b0c4de;
     font-size: 0.95rem;
     margin-bottom: 1.5rem;
     line-height: 1.5;
@@ -290,21 +296,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .tag {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background: linear-gradient(135deg, #f8f9ff, #eff1ff);
-    color: #667eea;
+    background: rgba(0, 191, 255, 0.1);
+    color: #00bfff;
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 500;
-    border: 1px solid rgba(102, 126, 234, 0.2);
+    border: 1px solid rgba(0, 191, 255, 0.3);
     transition: all 0.2s ease;
     cursor: default;
   }
 
   .tag:hover {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
+    background: linear-gradient(135deg, #00bfff, #00d4ff);
+    color: #0d1b2a;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 191, 255, 0.4);
   }
 
   /* Responsive */
