@@ -105,4 +105,33 @@ const { title } = Astro.props;
     color: #333;
     margin-top: 4rem;
   }
+
+  /* Responsive pour mobile */
+  @media (max-width: 768px) {
+    header {
+      padding: 0.8rem 1rem;
+      position: relative; /* Désactive sticky sur mobile */
+    }
+
+    nav {
+      flex-direction: column;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .nav-links {
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+    }
+
+    main {
+      margin: 1rem auto;
+      padding: 1.5rem;
+    }
+  }
 </style>
